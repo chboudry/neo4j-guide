@@ -9,6 +9,12 @@ There are two categories of principals that need to authenticate against Neo4j v
 
 Each category requires a different OAuth 2.0 / OIDC flow.
 
+| Flow | For | Pros | Cons |
+|---|---|---|---|
+| **Authorization Code + PKCE** | Human users with a browser | Secure, no client secret needed, industry standard | Requires browser redirect |
+| **Device Authorization** | Human users on headless / CLI environments (Jupyter notebooks)| No browser needed on the initiating device, supports MFA | User still needs a browser on a separate device to complete authentication; polling latency |
+| **Client Credentials** | Backend applications, service principals | Fully automated, no user interaction | No user identity in token, secret management required |
+
 ---
 
 ## For Users
