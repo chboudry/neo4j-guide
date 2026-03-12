@@ -101,15 +101,10 @@ sequenceDiagram
 ```
 
 
-
 ### “Connectors” (ETL, streaming, BI, integrations)
 
-Connectors typically choose one of these patterns:
+All Neo4j Connectors are **Driver-based**: uses Bolt.
 
-- **Driver-based**: uses Bolt (best for Cypher + transactions)
-- **HTTP-based**: uses HTTP APIs (often simpler networking, but not always feature-complete for Cypher workloads)
-
-When evaluating a connector, check which protocol it uses so you can expose only what’s needed.
 
 ### Query API connections (HTTP/HTTPS)
 
